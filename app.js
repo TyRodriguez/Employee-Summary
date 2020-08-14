@@ -127,7 +127,7 @@ function createTeam() {
         } else {
             newMember = new Intern(emp.name, team.length + 1, emp.email, emp.school);
         }
-        team.push(newmember);
+        team.push(newMember);
         if (emp.add === "Yes") {
             console.clear()
             createTeam();
@@ -138,7 +138,7 @@ function createTeam() {
     })
 }
 
-function init() {
+async function init() {
     inquirer.prompt(managerQ).then(manager => {
         let teamManager = new Manager(manager.name, 1, manager.email, manager.officeNum);
         team.push(teamManager);
@@ -150,7 +150,6 @@ function createHTML(){
 }
 
 init();
-
 
 
 // Write code to use inquirer to gather information about the development team members,
